@@ -111,8 +111,28 @@ dialog h2{margin:0 0 12px;font-size:17px}
 
 <script>
 /* === НАСТРОЙКИ НОВОГО проекта Firebase: Project settings → Your apps === */
-const FB={apiKey:"",authDomain:"",projectId:"",storageBucket:"",messagingSenderId:"",appId:""};
-const APP_PASSWORD="change-me"; /* ← поменяйте на свой пароль */
+const FB={// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCJiNAGMLasVp9evF1W4xWmpfwHdpjwIhk",
+  authDomain: "motoshoproman.firebaseapp.com",
+  projectId: "motoshoproman",
+  storageBucket: "motoshoproman.firebasestorage.app",
+  messagingSenderId: "455022743382",
+  appId: "1:455022743382:web:49f28692f69e51c93610f7",
+  measurementId: "G-4F3M708L4X"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);};
+const APP_PASSWORD="12345"; /* ← поменяйте на свой пароль */
 const KEY='motoshop:v1';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
